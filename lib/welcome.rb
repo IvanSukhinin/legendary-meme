@@ -9,6 +9,3 @@ class Welcome
     "Hello, #{@name}"
   end
 end
-
-w = Welcome.new("John")
-w.greet
