@@ -1,12 +1,12 @@
 require './lib/calculate'
-# def meters_to_kilometers: (Float kilometers) -> ::Float
+
 class Init
   attr_reader :value
 
   def do_calculate
     puts 'Enter function: '
     calc = Calculate.new(@value)
-    unit = gets.chomp
+    unit = gets.to_s.chomp
     begin
       puts calc.send(unit)
     rescue StandardError
@@ -20,13 +20,13 @@ class Init
   def init_value
     puts 'Enter value: '
     @value = 0
-    @value = gets.chomp.to_f while @value <= 0
+    @value = gets.to_s.chomp.to_f while @value <= 0
     @value
   end
 
   def quit?
     puts 'Quit? Y/n'
-    check_quit = gets.chomp
+    check_quit = gets.to_s.chomp
 
     if check_quit == 'Y'
       abort
