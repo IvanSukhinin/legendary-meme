@@ -1,0 +1,5 @@
+class Init
+	def do_calculate: -> ::void
+	def init_value: -> ::Float
+	def quit?: -> ::void
+end
