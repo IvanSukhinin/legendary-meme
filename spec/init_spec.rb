@@ -7,5 +7,4 @@ RSpec.describe Init do
     subject { Init.new.init_value }
     it { is_expected.to eq 10 }
   end
-
 end
