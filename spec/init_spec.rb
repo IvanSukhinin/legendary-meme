@@ -17,9 +17,4 @@ RSpec.describe Init do
     subject { Init.new.quit? }
     it { is_expected.to eq nil }
   end
-
-  describe '#quit Yes' do
-    subject { Init.new.quit? }
-    it { is_expected.to eq nil }
-  end
 end
