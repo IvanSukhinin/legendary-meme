@@ -6,7 +6,7 @@ class App
     loop do
       init.init_value
       init.do_calculate
-      init.quit?
+      abort if init.quit?
     end
   end
 end

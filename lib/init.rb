@@ -29,12 +29,6 @@ class Init
 
   def quit?
     puts 'Quit? Y/n'
-    check_quit = gets.to_s.chomp
-
-    if check_quit == 'Y'
-      abort
-    elsif check_quit != 'n'
-      quit?
-    end
+    gets.to_s.chomp.downcase == 'y'
   end
 end
