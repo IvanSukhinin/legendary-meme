@@ -21,9 +21,13 @@ class Init
   end
 
   def init_value
-    puts 'Enter value: '
-    @value = 0
-    @value = gets.to_s.chomp.to_f while @value <= 0
+    loop do
+      puts 'Enter value: '
+      @value = gets.to_s.chomp.to_f
+      break if @value > 0
+
+      puts 'Value must be > 0'
+    end
     @value
   end
 
