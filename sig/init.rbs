@@ -1,5 +1,9 @@
 class Init
-	def do_calculate: -> ::NilClass
-	def init_value: -> ::Float
-	def quit?: -> ::NilClass
+	def init_call_func_name: -> String
+	def init_value: -> String
+	def quit?: (String message) -> (TrueClass | FalseClass | NilClass)
+	def init: (String break_condition_func_name, String break_condition) -> String
+	def type_value: -> String
+	def check_value?: (String value) -> (TrueClass | FalseClass | NilClass)
+	def check_call_func_name?: (String call_func_name) -> (TrueClass | FalseClass | NilClass)
 end

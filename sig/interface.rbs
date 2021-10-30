@@ -1,0 +1,4 @@
+class Interface
+	def initialize: (String call_func_name, String value) -> NilClass
+	def do_calculate: -> Float
+end

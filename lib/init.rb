@@ -23,15 +23,14 @@ class Init
 
   private
 
-  def init(break_condition_func_name, break_condition = '')
+  def init(break_condition_func_name, break_condition)
     value = ''
     loop do
       puts break_condition
       puts 'Enter value: '
       value = type_value
-      break if send(break_condition_func_name, value) || quit?(value)
+      return value if send(break_condition_func_name, value) || quit?(value)
     end
-    value
   end
 
   def type_value
