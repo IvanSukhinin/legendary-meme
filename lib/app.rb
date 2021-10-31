@@ -1,5 +1,5 @@
 require './lib/init'
-require './lib/interface'
+require './lib/calculation'
 
 class App
   def run
@@ -11,7 +11,7 @@ class App
       call_func_name = init.init_call_func_name
       return if init.quit?(call_func_name)
 
-      calc = Interface.new(call_func_name, value)
+      calc = Calculation.new(call_func_name, value)
       puts calc.do_calculate
     end
   end

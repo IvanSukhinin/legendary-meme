@@ -18,7 +18,7 @@ class Init
   end
 
   def quit?(message)
-    message.downcase == 'q'
+    message.to_s.downcase == 'q'
   end
 
   private
