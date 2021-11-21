@@ -1,16 +1,16 @@
-require './lib/calculate'
+require './lib/convert'
 
 class Calculation
-  def initialize(call_func_name, value)
-    @call_func_name = call_func_name.to_i
-    @calc = Calculate.new(value.to_f)
+  def initialize(call_func_name_index, value)
+    @call_func_name_index = call_func_name_index.to_i
+    @convert = Convert.new(value.to_f)
   end
 
   def do_calculate
-    func_name = function_name
+    function_name = set_function_name
     res = 0
     begin
-      res = @calc.send(func_name)
+      res = @convert.send(function_name)
     rescue StandardError
       res = -1
     end
@@ -19,18 +19,17 @@ class Calculation
 
   private
 
-  def function_name
-    functions = {
-      1 => 'meters_to_miles',
-      2 => 'meters_to_kilometers',
-      3 => 'kilometers_to_miles',
-      4 => 'kilometers_to_meters',
-      5 => 'miles_to_meters',
-      6 => 'miles_to_kilometers'
-    }
+  def set_function_name
+    functions = %w[meters_to_miles meters_to_kilometers
+                   kilometers_to_miles
+                   kilometers_to_meters
+                   miles_to_meters
+                   miles_to_kilometers]
 
-    return -1 unless functions.include? @call_func_name
+    functions_index_range = 1..6
 
-    functions[@call_func_name]
+    return -1 unless functions_index_range.include?(@call_func_name_index)
+
+    functions[@call_func_name_index - 1]
   end
 end

@@ -41,7 +41,8 @@ class Init
     value.to_f.positive?
   end
 
-  def check_call_func_name?(call_func_name)
-    call_func_name.to_i >= 1 and call_func_name.to_i <= 6
+  def check_call_func_name?(call_func_name_index)
+    functions_index_range = 1..6
+    functions_index_range.include?(call_func_name_index.to_i)
   end
 end

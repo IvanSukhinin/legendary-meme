@@ -1,4 +1,4 @@
-class Calculate
+class Convert
   def initialize(value)
     @value = value
   end

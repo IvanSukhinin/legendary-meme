@@ -1,4 +1,4 @@
-class Calculate
+class Convert
   def initialize: (Float value) -> void
   def meters_to_kilometers: -> ::Float
   def meters_to_miles: -> ::Float

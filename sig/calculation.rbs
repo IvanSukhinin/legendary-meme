@@ -1,5 +1,5 @@
 class Calculation
 	def initialize: (String call_func_name, String value) -> NilClass
 	def do_calculate: -> Float
-	def function_name: -> (Integer | String)
+	def set_function_name: -> (Integer | String)
 end
